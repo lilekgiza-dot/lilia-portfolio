@@ -3,202 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лилия — учусь создавать приложения с ИИ</title>
+<title>Лилия — ИИ-помощник для людей 50+</title>
+<meta name="description" content="Настрою личного ИИ-помощника в Telegram для людей 50+ и бота для малого бизнеса. Спокойно, понятно, без технических слов.">
 <style>
   :root {
     --bg: #fbf8f3;
     --card: #ffffff;
     --ink: #2b2620;
-    --text-dim: #6b6355;
+    --text-dim: #5f584b;
     --accent: #1f5c4f;
     --accent-light: #2f8a76;
+    --accent-soft: rgba(31,92,79,0.08);
     --gold: #c9962f;
     --border: #e8e0d0;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--bg);
     color: var(--ink);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px 70px;
-  }
-
-  header {
-    max-width: 640px;
-    text-align: center;
-    margin-top: 56px;
-  }
-
-  .eyebrow {
-    color: var(--accent-light);
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 0 0 14px;
-  }
-
-  h1 {
-    font-size: clamp(1.9rem, 5vw, 2.6rem);
-    margin: 0 0 16px;
-    line-height: 1.25;
-  }
-
-  .lead {
-    color: var(--text-dim);
-    font-size: 1.1rem;
-    line-height: 1.65;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  section {
-    width: 100%;
-    max-width: 640px;
-  }
-
-  .projects {
-    margin-top: 56px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.15s ease, transform 0.15s ease;
-  }
-
-  .project-card:hover {
-    border-color: var(--accent-light);
-    transform: translateY(-2px);
-  }
-
-  .project-tag {
-    display: inline-block;
-    background: rgba(31,92,79,0.08);
-    color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 20px;
-    width: fit-content;
-  }
-
-  .project-card h3 {
-    margin: 0;
-    font-size: 1.25rem;
-  }
-
-  .project-card p {
-    margin: 0;
-    color: var(--text-dim);
-    line-height: 1.55;
-  }
-
-  .project-link {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-
-  .story {
-    margin-top: 56px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 32px;
-    line-height: 1.75;
-    font-size: 1.02rem;
-  }
-
-  .story p { margin: 0 0 14px; }
-  .story p:last-child { margin-bottom: 0; }
-
-  .cta {
-    margin-top: 56px;
-    text-align: center;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 14px;
-    padding: 40px 32px;
-  }
-
-  .cta h2 {
-    margin: 0 0 12px;
-    font-size: 1.4rem;
-  }
-
-  .cta p {
-    margin: 0 0 24px;
-    opacity: 0.9;
+    font-size: 18px;
     line-height: 1.6;
   }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
 
-  .cta-button {
-    display: inline-block;
-    background: var(--gold);
-    color: #2b2620;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-size: 1.05rem;
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; gap: 12px; flex-wrap: wrap;
+  }
+  .logo { font-weight: 700; font-size: 1.1rem; color: var(--accent); text-decoration: none; }
+  .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; }
+  .nav-links a:hover { color: var(--accent); }
+
+  header { padding: 48px 0 24px; }
+  .eyebrow {
+    color: var(--accent-light); font-size: 0.85rem; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 600; margin: 0 0 14px;
+  }
+  h1 { font-size: clamp(2rem, 5.5vw, 2.8rem); line-height: 1.2; margin: 0 0 20px; }
+  .lead { color: var(--text-dim); font-size: 1.15rem; margin: 0 0 32px; max-width: 600px; }
+
+  .btn {
+    display: inline-block; background: var(--gold); color: var(--ink);
+    text-decoration: none; font-weight: 700; padding: 16px 32px;
+    border-radius: 30px; font-size: 1.05rem;
+  }
+  .btn:hover { filter: brightness(1.05); }
+  .btn-ghost {
+    display: inline-block; color: var(--accent); font-weight: 600;
+    text-decoration: none; padding: 16px 8px; margin-left: 8px;
   }
 
-  footer {
-    margin-top: 48px;
-    color: var(--text-dim);
-    font-size: 0.9rem;
+  section { padding: 48px 0 8px; }
+  h2 { font-size: 1.6rem; margin: 0 0 8px; }
+  .section-lead { color: var(--text-dim); margin: 0 0 28px; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px 28px;
   }
+  .grid { display: grid; gap: 18px; }
+  @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+  .about p { margin: 0 0 14px; }
+  .about p:last-child { margin-bottom: 0; }
+
+  .service h3 { margin: 0 0 10px; font-size: 1.25rem; }
+  .service p { margin: 0 0 14px; color: var(--text-dim); }
+  .service ul { margin: 0 0 18px; padding-left: 20px; color: var(--text-dim); }
+  .service li { margin-bottom: 6px; }
+  .price { font-weight: 700; color: var(--accent); font-size: 1.15rem; }
+
+  .tag {
+    display: inline-block; background: var(--accent-soft); color: var(--accent);
+    font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .example h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .example p { margin: 0; color: var(--text-dim); }
+  .example a { display: inline-block; margin-top: 12px; color: var(--accent); font-weight: 600; text-decoration: none; }
+
+  .steps { counter-reset: step; display: grid; gap: 14px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step b { display: block; }
+  .step span { color: var(--text-dim); }
+
+  details {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 22px; margin-bottom: 12px;
+  }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 12px 0 0; color: var(--text-dim); }
+
+  .cta {
+    margin: 56px 0 0; text-align: center; background: var(--accent);
+    color: #fff; border-radius: 16px; padding: 44px 28px;
+  }
+  .cta h2 { color: #fff; }
+  .cta p { opacity: 0.92; margin: 0 0 26px; }
+
+  footer { text-align: center; color: var(--text-dim); font-size: 0.9rem; padding: 40px 0 60px; }
 </style>
 </head>
 <body>
+<div class="wrap">
+
+<nav>
+  <a class="logo" href="#">Лилия · ИИ-помощники</a>
+  <div class="nav-links">
+    <a href="#services">Услуги</a>
+    <a href="#examples">Примеры</a>
+    <a href="#how">Как работаю</a>
+    <a href="#faq">Вопросы</a>
+  </div>
+</nav>
 
 <header>
-  <p class="eyebrow">поток 6 · ЛАБС</p>
-  <h1>Лилия — учусь создавать приложения с ИИ</h1>
-  <p class="lead">Мне не 20 лет, и я не программист. Но выяснилось, что с ИИ можно строить рабочие вещи самому — без диплома и без команды разработчиков. Вот что уже получилось.</p>
+  <p class="eyebrow">для людей 50+ · и для малого бизнеса</p>
+  <h1>Настрою вам личного ИИ-помощника — спокойно и без технических слов</h1>
+  <p class="lead">Мне не 20 лет, и я не программист. Я сама с нуля разобралась в нейросетях и теперь каждый день пользуюсь своим помощником. Помогу и вам — объясню на вашем языке и доведу до результата.</p>
+  <a class="btn" href="https://t.me/lilekgiza?text=Здравствуйте%2C%20Лилия!%20Хочу%20узнать%20про%20ИИ-помощника" target="_blank" rel="noopener">Написать в Telegram</a>
+  <a class="btn-ghost" href="#services">Смотреть услуги →</a>
 </header>
 
-<section class="projects">
-  <div class="project-card">
-    <span class="project-tag">finance-tracker</span>
-    <h3>Личный трекер финансов</h3>
-    <p>Учёт прихода и расхода, счета и операции — веду его каждый день вместо таблички в блокноте.</p>
-  </div>
-
-  <div class="project-card">
-    <span class="project-tag">health-tracker</span>
-    <h3>Личный трекер здоровья</h3>
-    <p>ДНК-профиль и анализы в одном месте — вместо разрозненных бумажек и результатов из разных лабораторий.</p>
+<section class="about">
+  <div class="card">
+    <p><b>Почему со мной проще.</b> Многим кажется, что ИИ — «это не для меня», что там всё сложно и на английском. Я тоже так думала. Поэтому знаю, где страшно, где непонятно и какие вопросы стесняются задать молодому айтишнику.</p>
+    <p>Я не продаю «волшебную кнопку». Я настраиваю помощника под вашу жизнь — финансы, здоровье, учёба, дела — и остаюсь на связи, пока вы не почувствуете себя уверенно.</p>
   </div>
 </section>
 
-<section class="story">
-  <p>Начала обучение только чтобы разобраться, что вообще такое ИИ — а в итоге сделала два приложения, которыми пользуюсь сама каждый день. Ничего не покупала готового и не нанимала программиста — всё собрано в диалоге с нейросетью, шаг за шагом.</p>
-  <p>Если вам тоже интересно, но кажется, что "это не для меня" — вот доказательство, что это не так.</p>
+<section id="services">
+  <h2>Услуги</h2>
+  <p class="section-lead">Цены «от» — точную сумму называю после короткого разговора, когда понятна задача.</p>
+  <div class="grid grid-2">
+    <div class="card service">
+      <h3>Личный ИИ-помощник в Telegram</h3>
+      <p>Помощник, который живёт в привычном мессенджере и знает о вас главное.</p>
+      <ul>
+        <li>напоминает, считает, подсказывает</li>
+        <li>помогает вести расходы и здоровье</li>
+        <li>отвечает понятно, без «умных» слов</li>
+        <li>научу пользоваться шаг за шагом</li>
+      </ul>
+      <div class="price">от 5 000 ₽</div>
+    </div>
+    <div class="card service">
+      <h3>Бот для малого бизнеса</h3>
+      <p>Telegram-бот, который снимает с вас рутину общения с клиентами.</p>
+      <ul>
+        <li>отвечает на частые вопросы</li>
+        <li>принимает заявки и записи</li>
+        <li>прогревает клиента и ведёт к покупке</li>
+        <li>заявки приходят вам в Telegram</li>
+      </ul>
+      <div class="price">от 20 000 ₽</div>
+    </div>
+  </div>
+</section>
+
+<section id="examples">
+  <h2>Что я уже сделала</h2>
+  <p class="section-lead">Всё собрано своими руками в диалоге с нейросетью — и всем этим я пользуюсь.</p>
+  <div class="grid grid-2">
+    <div class="card example">
+      <span class="tag">ИИ-агент</span>
+      <h3>«Друг» — мой личный помощник</h3>
+      <p>Живёт в Telegram, помнит мои дела и привычки, ведёт финансы и здоровье, помогает с учёбой, разбирает фото и документы.</p>
+    </div>
+    <div class="card example">
+      <span class="tag">бот-воронка</span>
+      <h3>«Искорка» — бот для продаж</h3>
+      <p>Знакомит человека с ИИ: задаёт пару вопросов, тут же считает пользу именно для него и предлагает настройку. Пять сценариев под разные запросы.</p>
+      <a href="https://t.me/IskraAgetbot" target="_blank" rel="noopener">Попробовать бота →</a>
+    </div>
+    <div class="card example">
+      <span class="tag">мини-приложение</span>
+      <h3>«Мои финансы»</h3>
+      <p>Приложение внутри Telegram: доходы, расходы, обязательные платежи и остатки по картам на одном экране. Веду каждый день.</p>
+    </div>
+    <div class="card example">
+      <span class="tag">трекер</span>
+      <h3>Трекер здоровья</h3>
+      <p>ДНК-профиль и анализы из разных лабораторий в одном месте — с понятными выводами, а не стопкой бумажек.</p>
+    </div>
+    <div class="card example">
+      <span class="tag">страница-подарок</span>
+      <h3>«Элли-бэлли»</h3>
+      <p>Страница для внучек с татарской колыбельной — подарок, который можно открыть с любого телефона.</p>
+      <a href="https://lilekgiza-dot.github.io/elli-belli/" target="_blank" rel="noopener">Посмотреть →</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>Как я работаю</h2>
+  <p class="section-lead">Без спешки и без сюрпризов.</p>
+  <div class="steps">
+    <div class="step"><div><b>Вы пишете мне</b><span>В Telegram, своими словами — можно голосовым.</span></div></div>
+    <div class="step"><div><b>Разговариваем</b><span>Выясняю, что вам нужно и чем помощник облегчит жизнь.</span></div></div>
+    <div class="step"><div><b>Называю цену и срок</b><span>Точно и заранее — без доплат в процессе.</span></div></div>
+    <div class="step"><div><b>Настраиваю и учу</b><span>Показываю, как пользоваться, и остаюсь на связи, пока всё не станет привычным.</span></div></div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>Частые вопросы</h2>
+  <details>
+    <summary>Я совсем не разбираюсь в технике. У меня получится?</summary>
+    <p>Да. Я сама начинала с нуля. Пользоваться помощником — это как переписываться в Telegram: вы пишете обычным текстом или голосом, он отвечает.</p>
+  </details>
+  <details>
+    <summary>Что нужно, чтобы начать?</summary>
+    <p>Телефон или компьютер с Telegram. Остальное настрою я и расскажу по шагам.</p>
+  </details>
+  <details>
+    <summary>Нужно ли платить за нейросеть отдельно?</summary>
+    <p>Зависит от задачи. Для некоторых помощников нужна подписка на нейросеть — я заранее скажу, нужна ли она вам и сколько стоит, до начала работы.</p>
+  </details>
+  <details>
+    <summary>Чем бот для бизнеса отличается от личного помощника?</summary>
+    <p>Личный помощник работает для вас. Бот для бизнеса общается с вашими клиентами: отвечает, записывает, принимает заявки.</p>
+  </details>
 </section>
 
 <section class="cta">
-  <h2>Есть вопросы или тоже хотите попробовать?</h2>
-  <p>Расскажу, с чего начать и что было сложнее всего.</p>
-  <a class="cta-button" href="https://t.me/lilekgiza?text=Здравствуйте%2C%20Лилия!%20Увидел(а)%20вашу%20страницу%20про%20приложения%20с%20ИИ%20%E2%80%94%20расскажите%2C%20с%20чего%20начать%3F" target="_blank" rel="noopener">Написать в Telegram</a>
+  <h2>Хотите своего помощника?</h2>
+  <p>Напишите — расскажу, что можно сделать именно для вас.</p>
+  <a class="btn" href="https://t.me/lilekgiza?text=Здравствуйте%2C%20Лилия!%20Хочу%20узнать%20про%20ИИ-помощника" target="_blank" rel="noopener">Написать в Telegram</a>
 </section>
 
-<footer>Лилия</footer>
+<footer>Лилия · ЛАБС 6 · t.me/lilekgiza</footer>
 
+</div>
 </body>
 </html>
