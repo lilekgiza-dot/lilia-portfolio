@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Боря — личный сайт кота</title>
+<style>
+  :root { --bg:#fbf8f3; --ink:#2b2620; --dim:#6b6255; --accent:#1f5c4f; --gold:#c9962f; --warm:#b9785a; --card:#f3ece1; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height:1.5; }
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+  .banner { background:var(--accent); color:#fff; text-align:center; font-size:14px; padding:8px 16px; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:20px 24px; max-width:1000px; margin:0 auto; }
+  .logo { font-size:24px; }
+  .btn { display:inline-block; background:var(--warm); color:#fff; text-decoration:none; padding:12px 22px; border-radius:999px; font-weight:600; border:none; cursor:pointer; font-size:16px; }
+  .btn.ghost { background:transparent; color:var(--ink); border:1.5px solid var(--ink); }
+  .hero { text-align:center; padding:48px 24px 56px; max-width:820px; margin:0 auto; }
+  .kicker { color:var(--warm); letter-spacing:.2em; font-size:13px; text-transform:uppercase; margin-bottom:16px; }
+  .hero-photo { width:min(320px,80vw); aspect-ratio:3/4; object-fit:cover; border-radius:28px; box-shadow:0 12px 30px rgba(60,40,20,.18); margin-bottom:22px; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .gallery figure { background:var(--card); border-radius:20px; overflow:hidden; }
+  .gallery img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .gallery figcaption { padding:12px 16px; color:var(--dim); font-size:15px; }
+  h1 { font-size:clamp(34px,6vw,56px); line-height:1.15; margin-bottom:18px; }
+  .lead { color:var(--dim); font-size:19px; margin-bottom:28px; }
+  .rule { display:inline-block; background:var(--card); border-radius:16px; padding:14px 22px; font-size:20px; margin-bottom:28px; }
+  .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  section { max-width:1000px; margin:0 auto; padding:40px 24px; }
+  h2 { font-size:30px; margin-bottom:22px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+  .card { background:var(--card); border-radius:20px; padding:22px; }
+  .card .ico { font-size:34px; }
+  .card h3 { font-size:19px; margin:8px 0 4px; }
+  .price { color:var(--accent); font-weight:700; margin-top:8px; }
+  .reviews .card p { font-style:italic; }
+  .reviews .who { color:var(--dim); font-size:14px; margin-top:8px; font-style:normal; }
+  footer { text-align:center; color:var(--dim); font-size:14px; padding:40px 24px 56px; }
+  footer a { color:var(--accent); }
+  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--ink); color:#fff; padding:14px 20px; border-radius:14px; font-size:16px; opacity:0; transition:opacity .3s; pointer-events:none; max-width:90vw; text-align:center; }
+  .toast.show { opacity:1; }
+</style>
+</head>
+<body>
+  <div class="banner">Шуточный демо-сайт. Сделала Лилия вместе с ИИ 🤖 — такую страничку можно сделать кому угодно</div>
+  <header>
+    <div class="logo serif">Боря 🐾</div>
+    <button class="btn" onclick="toast('Боря сейчас спит в гамаке. Перезвонит, когда проголодается 😴')">Мяукнуть</button>
+  </header>
+
+  <div class="hero">
+    <div class="kicker">— Личная практика</div>
+    <img class="hero-photo" src="borya-hero.jpg" alt="Боря в гамаке, прищурился">
+    <h1 class="serif">Боря — директор подоконника</h1>
+    <p class="lead">Лежу в гамаке, смотрю на город, слежу за порядком. Опыт работы — вся жизнь. Принимаю ласку без выходных.</p>
+    <div class="rule">Кормить можно всегда. Гладить — по записи 😹</div>
+    <div class="actions">
+      <button class="btn" onclick="toast('Вы записаны на поглаживание! Боря рассмотрит вашу заявку. Прищурившись 🐾')">Записаться на поглаживание</button>
+      <button class="btn ghost" onclick="toast('Миска уже пуста. Вы опоздали на 5 минут 🍽')">Покормить</button>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="serif">Услуги и цены</h2>
+    <div class="grid">
+      <div class="card"><div class="ico">😻</div><h3>Мурчание на коленях</h3><p>Снимает стресс, лечит хандру. Эффект — сразу.</p><div class="price">1 вкусняшка</div></div>
+      <div class="card"><div class="ico">⏰</div><h3>Будильник в 5:00</h3><p>Надёжно, без выходных и праздников.</p><div class="price">бесплатно (и неизбежно)</div></div>
+      <div class="card"><div class="ico">💻</div><h3>Лечь на клавиатуру</h3><p>Когда вы очень заняты. Особенно когда очень.</p><div class="price">входит в пакет</div></div>
+      <div class="card"><div class="ico">🧶</div><h3>Охота на клубок</h3><p>Шоу на 3 минуты, потом сон на 3 часа.</p><div class="price">1 почёсывание за ушком</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif">Рабочие будни</h2>
+    <div class="gallery">
+      <figure><img src="borya-hammock.jpg" alt="Боря в гамаке"><figcaption>Планёрка. Совещание продлится до ужина.</figcaption></figure>
+      <figure><img src="borya-window.jpg" alt="Боря на подоконнике"><figcaption>Обход территории. Всё под контролем.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2 class="serif">Отзывы</h2>
+    <div class="grid">
+      <div class="card"><p>«Пришла поработать за компьютером. Работал Боря. Я смотрела».</p><div class="who">— Хозяйка</div></div>
+      <div class="card"><p>«Хотел просто погладить. Теперь меня кусают по расписанию, и мне это нравится».</p><div class="who">— Гость</div></div>
+      <div class="card"><p>«Р-р-р… гав».</p><div class="who">— Соседский пёс, 2 звезды из 5</div></div>
+    </div>
+  </section>
+
+  <footer>
+    Хотите такой же сайт — для себя, своего дела или своего кота?<br>
+    <a href="https://t.me/IskraAgetbot">Начните с первых шагов в ИИ →</a>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+<script>
+  function toast(t){ var e=document.getElementById('toast'); e.textContent=t; e.classList.add('show'); clearTimeout(window._t); window._t=setTimeout(function(){e.classList.remove('show')},2600); }
+</script>
+</body>
+</html>
