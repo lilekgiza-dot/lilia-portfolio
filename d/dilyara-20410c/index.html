@@ -9,8 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fbfaf7; --bg-2:#f2eee6; --ink:#1d1a17; --ink-soft:#6e665c;
-  --red:#c2273a; --red-dark:#a01d2e; --gold:#b8913f; --line:#e5ded2; --card:#ffffff; --dark:#16130f;
+  --bg:#f8f0df; --bg-2:#f0e2c4; --ink:#1d1a17; --ink-soft:#6b5f4c;
+  --red:#c2273a; --red-dark:#a01d2e; --gold:#b08a3a; --line:#e3cf9f; --card:#fffaf0; --dark:#16130f;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -24,7 +24,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.65}
+body{margin:0;background:var(--bg) radial-gradient(1200px 600px at 85% -10%,rgba(214,175,90,.28),transparent 60%) no-repeat;color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.65}
 h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.15;margin:0;text-wrap:balance}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 .demo{background:var(--dark);color:#f3ede4;text-align:center;font-size:.85rem;padding:8px 16px}
@@ -58,7 +58,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .hero .ph{aspect-ratio:4/5}
 
 section{padding:60px 0}
-.alt{background:var(--bg-2)}
+.alt{background:linear-gradient(180deg,var(--bg-2),color-mix(in srgb,var(--bg-2) 70%,var(--bg)))}
 .sec-head{max-width:42em;margin-bottom:30px}
 .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:10px}
 .sec-head p{color:var(--ink-soft);margin:0}
