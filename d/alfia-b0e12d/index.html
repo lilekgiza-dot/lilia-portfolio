@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Студия нейрографики Альфии — занятия вживую</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf8f3; --bg-2:#f2ece2; --ink:#1f2433; --ink-soft:#5f6474;
+  --blue:#3d5a9e; --blue-dark:#2f4880; --sun:#e8a93a; --rose:#d9707f; --line:#e4dccd; --card:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181f; --bg-2:#1d2029; --ink:#eef0f6; --ink-soft:#aab0c0;
+    --blue:#8ea8e8; --blue-dark:#7a95d8; --sun:#f0c060; --rose:#ec93a0; --line:#2e3240; --card:#1b1e27;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181f; --bg-2:#1d2029; --ink:#eef0f6; --ink-soft:#aab0c0;
+  --blue:#8ea8e8; --blue-dark:#7a95d8; --sun:#f0c060; --rose:#ec93a0; --line:#2e3240; --card:#1b1e27;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.65}
+h1,h2,h3{font-family:'Cormorant',Georgia,serif;line-height:1.1;margin:0;text-wrap:balance;font-weight:700}
+img{display:block;max-width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.demo{background:var(--ink);color:var(--bg);text-align:center;font-size:.85rem;padding:8px 16px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:12px;gap:12px}
+.logo{font-family:'Cormorant',serif;font-weight:700;font-size:1.4rem;text-decoration:none;color:inherit}
+.logo span{color:var(--blue);font-style:italic}
+.links{display:flex;gap:20px;font-weight:500;font-size:.93rem}
+.links a{text-decoration:none;color:var(--ink-soft)}
+.links a:hover{color:var(--blue)}
+@media(max-width:720px){.links{display:none}}
+
+.hero{padding:52px 0 40px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative}
+@media(max-width:840px){.hero .wrap{grid-template-columns:1fr}}
+.lines{position:absolute;inset:0;pointer-events:none;opacity:.35}
+.kicker{color:var(--blue);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+.hero h1{font-size:clamp(2.5rem,6vw,4.1rem);margin:14px 0 18px}
+.hero h1 em{color:var(--rose)}
+.hero p{color:var(--ink-soft);font-size:1.12rem;max-width:32em;margin:0}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--blue)}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+.btn.ghost{color:var(--blue)}
+.hero-img{border-radius:28px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(31,36,51,.35);aspect-ratio:4/5}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+
+section{padding:62px 0}
+.alt{background:var(--bg-2)}
+.sec-head{max-width:42em;margin-bottom:30px}
+.sec-head h2{font-size:clamp(2rem,4.2vw,2.8rem);margin-bottom:10px}
+.sec-head p{color:var(--ink-soft);margin:0}
+
+.what{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:840px){.what{grid-template-columns:1fr}}
+.what .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.what .pics img{border-radius:18px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.steps3{display:grid;gap:14px;margin-top:20px}
+.steps3 div{display:flex;gap:14px;align-items:flex-start}
+.steps3 b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sun);color:#1f2433;font-weight:700}
+.steps3 p{margin:0;color:var(--ink-soft)}
+.steps3 strong{color:var(--ink)}
+
+.forwho{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.forwho div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.forwho .ic{font-size:1.6rem}
+.forwho h3{font-size:1.35rem;margin:6px 0 4px}
+.forwho p{margin:0;color:var(--ink-soft);font-size:.95rem}
+.note-soft{margin-top:16px;color:var(--ink-soft);font-size:.88rem}
+
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.fmt{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.fmt .tag{align-self:flex-start;font-size:.78rem;font-weight:700;color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent);padding:3px 10px;border-radius:999px}
+.fmt h3{font-size:1.6rem}
+.fmt p{margin:0;color:var(--ink-soft);font-size:.96rem}
+.fmt ul{margin:4px 0 0;padding-left:18px;color:var(--ink-soft);font-size:.94rem}
+.fmt .price{margin-top:auto;padding-top:12px;font-weight:700;font-size:1.15rem}
+.fmt .price small{font-weight:500;color:var(--ink-soft);font-size:.85rem}
+
+.gallery{columns:3 260px;column-gap:14px}
+.gallery img{width:100%;border-radius:16px;margin-bottom:14px;break-inside:avoid}
+
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+@media(max-width:840px){.about{grid-template-columns:1fr}}
+.about img{border-radius:24px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about blockquote{margin:20px 0 0;padding:16px 20px;border-left:3px solid var(--rose);background:var(--card);border-radius:0 14px 14px 0;font-family:'Cormorant',serif;font-style:italic;font-size:1.35rem;line-height:1.3}
+
+.home{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+@media(max-width:840px){.home{grid-template-columns:1fr}}
+.home img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.home ul{padding-left:20px;color:var(--ink-soft)}
+.home li{margin-bottom:6px}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--blue);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--ink-soft)}
+
+.contact{text-align:center}
+.contact h2{font-size:clamp(2.1rem,4.6vw,3rem);margin-bottom:10px}
+.contact p{color:var(--ink-soft);max-width:32em;margin:0 auto}
+.contact .btns{justify-content:center}
+.btn.wa{border-color:#2fa864;color:#2fa864}
+footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:var(--ink-soft);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<div class="demo">Демо-версия сайта · цены, город и контакты будут ваши</div>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">Студия нейрографики <span>Альфии</span></a>
+  <div class="links">
+    <a href="#what">Что это</a>
+    <a href="#formats">Занятия</a>
+    <a href="#works">Работы</a>
+    <a href="#about">Обо мне</a>
+    <a href="#contact">Записаться</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <svg class="lines" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 420 C 180 300, 260 520, 460 380 S 760 160, 980 300 S 1180 420, 1240 260" fill="none" stroke="var(--blue)" stroke-width="2"/><path d="M-20 140 C 200 220, 320 40, 520 120 S 860 320, 1240 120" fill="none" stroke="var(--rose)" stroke-width="2"/></svg>
+  <div class="wrap">
+    <div>
+      <div class="kicker">Нейрографика · занятия вживую</div>
+      <h1>Рисуйте линии — и <em>отпускайте</em> то, что тяжело</h1>
+      <p>Нейрографика — это простое рисование, где не нужно уметь рисовать. Линии, круги, цвет — а на выходе спокойствие, ясность и красивая работа на память. Приходите в мою уютную домашнюю студию.</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Записаться на занятие</a>
+        <a class="btn ghost" href="#formats">Форматы и цены</a>
+      </div>
+    </div>
+    <div class="hero-img"><img src="img/w8.jpg" alt="Альфия держит свою работу в технике нейрографики"></div>
+  </div>
+</header>
+
+<section class="alt" id="what"><div class="wrap what">
+  <div>
+    <div class="kicker">Что такое нейрографика</div>
+    <h2 style="font-size:clamp(2rem,4.2vw,2.8rem);margin:10px 0 14px">Рисунок, в котором рисуете вы — а меняется настроение</h2>
+    <p style="color:var(--ink-soft);margin:0">Это метод осознанного рисования: вы переводите на бумагу то, что внутри, и мягко «перерисовываете» его. Не нужно таланта и опыта — только бумага, маркер и цветные карандаши.</p>
+    <div class="steps3">
+      <div><b>1</b><p><strong>Выпускаем.</strong> Свободные линии — всё, что сейчас беспокоит, выходит на лист.</p></div>
+      <div><b>2</b><p><strong>Скругляем.</strong> Убираем острые углы — и на бумаге, и в мыслях становится мягче.</p></div>
+      <div><b>3</b><p><strong>Наполняем цветом.</strong> Рисунок оживает, а вы уходите с ощущением лёгкости.</p></div>
+    </div>
+  </div>
+  <div class="pics">
+    <img src="img/w15.jpg" alt="Рука рисует свободные линии маркером" loading="lazy">
+    <img src="img/w10.jpg" alt="Работа в процессе: линии и первые цвета" loading="lazy">
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>Для кого</h2><p>Нейрографика подходит всем — возраст и умение рисовать не важны.</p></div>
+  <div class="forwho">
+    <div><div class="ic">🌿</div><h3>Успокоиться</h3><p>Когда внутри тревога, суета и мысли по кругу.</p></div>
+    <div><div class="ic">🧭</div><h3>Найти себя</h3><p>Разобраться, чего хочется, и увидеть свой следующий шаг.</p></div>
+    <div><div class="ic">💫</div><h3>Загадать желание</h3><p>Нарисовать цель — и настроиться на неё.</p></div>
+    <div><div class="ic">🎨</div><h3>Просто отдохнуть</h3><p>Два часа для себя, тишина, карандаши и чай.</p></div>
+  </div>
+  <p class="note-soft">Нейрографика — практика для самочувствия и творчества, она не заменяет помощь врача или психолога.</p>
+</div></section>
+
+<section class="alt" id="formats"><div class="wrap">
+  <div class="sec-head"><h2>Форматы занятий</h2><p>Все занятия — вживую, в моей домашней студии. Материалы даю.</p></div>
+  <div class="formats">
+    <div class="fmt"><span class="tag">Для знакомства</span><h3>Разовое занятие</h3><p>Попробовать нейрографику и уйти со своей первой работой.</p><ul><li>одна тема — один рисунок</li><li>все материалы включены</li></ul><div class="price">от — ₽ <small>/ занятие</small></div></div>
+    <div class="fmt"><span class="tag">В кругу</span><h3>Мастер-класс</h3><p>Небольшая группа, одна тема — например, «Желание», «Отпускаю тревогу», «Мой год».</p><ul><li>до — человек</li><li>тёплая атмосфера, чай</li></ul><div class="price">от — ₽ <small>/ человек</small></div></div>
+    <div class="fmt"><span class="tag">Глубже</span><h3>Индивидуально</h3><p>Только вы и ваш запрос. Разбираем то, что важно именно вам, в своём темпе.</p><ul><li>запрос формулируем вместе</li><li>удобное время</li></ul><div class="price">от — ₽ <small>/ встреча</small></div></div>
+  </div>
+</div></section>
+
+<section id="works"><div class="wrap">
+  <div class="sec-head"><h2>Работы</h2><p>Каждая — чья-то история, перерисованная в цвет.</p></div>
+  <div class="gallery">
+    <img src="img/w1.jpg" alt="Работа «Мне всегда везёт»" loading="lazy">
+    <img src="img/w12.jpg" alt="Круговая работа с цветными карандашами" loading="lazy">
+    <img src="img/w16.jpg" alt="Работа с кругами и веточкой" loading="lazy">
+    <img src="img/w3.jpg" alt="Работа в руках мастера" loading="lazy">
+    <img src="img/w13.jpg" alt="Цветные карандаши над работой" loading="lazy">
+    <img src="img/w4.jpg" alt="Несколько работ на столе" loading="lazy">
+  </div>
+</div></section>
+
+<section class="alt" id="about"><div class="wrap about">
+  <img src="img/w6.jpg" alt="Альфия с работами в технике нейрографики" loading="lazy">
+  <div>
+    <div class="kicker">Обо мне</div>
+    <h2 style="font-size:clamp(2rem,4.2vw,2.8rem);margin:10px 0 14px">Меня зовут Альфия</h2>
+    <p style="color:var(--ink-soft);margin:0 0 12px">Нейрографика пришла в мою жизнь и изменила её — теперь я делюсь ею с другими. Я прохожу обучение на инструктора, и до сертификата мне осталась одна работа.</p>
+    <p style="color:var(--ink-soft);margin:0">На моих занятиях не бывает «неправильно»: каждая линия — ваша, каждый цвет — ваш. Я рядом, подскажу и поддержу.</p>
+    <blockquote>«Мне всегда везёт» — так называется одна из моих работ. Пусть и вам повезёт с первой линии.</blockquote>
+  </div>
+</div></section>
+
+<section><div class="wrap home">
+  <div>
+    <div class="kicker">Где проходят занятия</div>
+    <h2 style="font-size:clamp(2rem,4.2vw,2.8rem);margin:10px 0 14px">Как в гостях у подруги</h2>
+    <ul>
+      <li>Домашняя студия — уютно, без спешки, без чужих глаз</li>
+      <li>Город и адрес — сообщу при записи</li>
+      <li>Все материалы: бумага, маркеры, карандаши</li>
+      <li>Чай и тишина — обязательно</li>
+    </ul>
+  </div>
+  <img src="img/w11.jpg" alt="Стол с карандашами, идёт занятие" loading="lazy">
+</div></section>
+
+<section class="alt"><div class="wrap" style="max-width:780px">
+  <div class="sec-head"><h2>Частые вопросы</h2></div>
+  <details><summary>Я совсем не умею рисовать. Получится?</summary><p>Да! Здесь не нужно рисовать «красиво» — только линии, круги и цвет. Это получается у всех.</p></details>
+  <details><summary>Что взять с собой?</summary><p>Ничего — все материалы у меня. Только хорошее настроение и тему, с которой хочется поработать.</p></details>
+  <details><summary>Сколько длится занятие?</summary><p>Здесь будет ваш ответ: например, разовое — около 2 часов.</p></details>
+  <details><summary>Можно прийти вдвоём с подругой?</summary><p>Конечно — на мастер-класс вместе ещё веселее.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2>Записаться на занятие</h2>
+  <p>Напишите, какой формат интересен, — подберём удобное время.</p>
+  <div class="btns">
+    <a class="btn primary" href="#">Написать в Telegram</a>
+    <a class="btn ghost wa" href="#">Написать в WhatsApp</a>
+    <a class="btn ghost" href="#">Позвонить</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Студия нейрографики Альфии · занятия вживую · разовые, мастер-классы, индивидуально</div></footer>
+</body>
+</html>
