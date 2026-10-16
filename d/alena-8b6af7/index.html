@@ -54,8 +54,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 
 .ph{position:relative;border-radius:24px;background:linear-gradient(160deg,var(--bg-2),var(--card));border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
 .ph svg{width:60%;height:auto}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .credit{position:absolute;bottom:8px;right:10px;font-size:.7rem;color:#fff;background:rgba(0,0,0,.35);padding:2px 8px;border-radius:999px}
 .ph .note{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:.78rem;color:var(--ink-soft)}
 .door{aspect-ratio:4/5}
+.door:has(img)::before{display:none}
 .door::before{content:"";position:absolute;inset:18px;border:2px dashed var(--line);border-radius:120px 120px 16px 16px}
 
 section{padding:58px 0}
@@ -143,18 +146,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:v
       <span class="badge">🎨 Мастер-классы в Волгограде</span>
     </div>
   </div>
-  <div class="ph door" aria-label="Место для фото мастерской">
-    <svg viewBox="0 0 160 200" aria-hidden="true">
-      <circle cx="80" cy="70" r="30" fill="#e7a76b" opacity=".85"/>
-      <path d="M54 52 L60 30 L72 44 M106 52 L100 30 L88 44" fill="#e7a76b" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
-      <circle cx="69" cy="70" r="7" fill="#fff" stroke="var(--ink)" stroke-width="2"/><circle cx="91" cy="70" r="7" fill="#fff" stroke="var(--ink)" stroke-width="2"/>
-      <circle cx="69" cy="71" r="3.5" fill="var(--teal)"/><circle cx="91" cy="71" r="3.5" fill="var(--teal)"/>
-      <path d="M58 100 L80 92 L102 100 L96 112 L64 112 Z" fill="var(--coral)"/>
-      <rect x="56" y="110" width="48" height="56" rx="10" fill="var(--teal)" opacity=".85"/>
-      <path d="M64 120 h32 M64 130 h32 M64 140 h32" stroke="#fff" stroke-width="3" opacity=".6"/>
-      <rect x="62" y="166" width="12" height="16" rx="4" fill="var(--ink)"/><rect x="86" y="166" width="12" height="16" rx="4" fill="var(--ink)"/>
-    </svg>
-    <div class="note">здесь будет фото вашей мастерской или кукол</div>
+  <div class="ph door" style="border:0"><img src="img/cat.jpg" alt="Рыжий кот в красном платке — авторская кукла Алёны Елисеевой"><a class="credit" href="https://vk.com/alenaartdolls" target="_blank" rel="noopener">фото: Алёна Елисеева</a></div>
   </div>
 </div></header>
 
@@ -190,7 +182,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:v
     </article>
 
     <article class="char">
-      <div class="ph"><svg viewBox="0 0 120 150" aria-hidden="true"><path d="M30 60 Q20 40 40 46 M90 60 Q100 40 80 46" stroke="#a9c3e0" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="60" cy="52" r="18" fill="#f0c9a8"/><path d="M42 44 Q60 26 78 44" stroke="#ddd" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M44 72 L76 72 L84 116 L36 116 Z" fill="#d8c3b4"/><circle cx="56" cy="92" r="4" fill="#5b8fc7"/><circle cx="64" cy="98" r="4" fill="#5b8fc7"/></svg><div class="note">фото броши</div></div>
+      <div class="ph"><img src="img/angel.jpg" alt="Ангелок-брошь с вышитыми голубыми цветами — работа Алёны Елисеевой" loading="lazy"><a class="credit" href="https://vk.com/alenaartdolls" target="_blank" rel="noopener">фото: Алёна Елисеева</a></div></div>
       <div class="body"><h3>Ангелок-брошь</h3><div class="who">сам выбрал свой цвет</div>
         <p>Планировался в бежевых тонах, но не отпускал, пока не вышились голубые цветочки. Иногда они сами диктуют свой образ.</p>
         <div class="meta"><span class="price">— ₽</span><span class="tag order">На заказ</span></div>
