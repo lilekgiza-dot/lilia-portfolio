@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Лилия — ИИ-помощники и сайты: спокойно и по-человечески</title>
-<meta name="description" content="Настрою личного ИИ-помощника в Telegram для людей 50+ и бота для малого бизнеса. Спокойно, понятно, без технических слов.">
+<meta name="description" content="Настрою личного ИИ-помощника в Telegram для себя и бота или сайт для малого бизнеса. Спокойно, понятно, без технических слов.">
 <style>
   :root {
     --bg: #fbf8f3;
@@ -52,6 +52,12 @@
     border-radius: 30px; font-size: 1.05rem;
   }
   .btn:hover { filter: brightness(1.05); }
+  .doors { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; max-width:640px; }
+  @media (max-width:560px){ .doors { grid-template-columns:1fr; } }
+  .door { display:flex; flex-direction:column; gap:4px; padding:16px 18px; border:1px solid var(--accent); border-radius:16px; text-decoration:none; color:inherit; }
+  .door span { font-size:1.5rem; }
+  .door b { color: var(--accent); }
+  .door small { color: var(--text-dim); font-size:.9rem; line-height:1.35; }
   .cert { display:flex; align-items:center; gap:12px; margin-top:26px; padding:12px 16px; border:1px solid var(--accent); border-radius:14px; text-decoration:none; color:inherit; max-width:560px; }
   .cert .ic { font-size:1.6rem; }
   .cert b { color: var(--accent); }
@@ -136,7 +142,10 @@
   <h1>Давайте я вам всё покажу — спокойно, по-дружески, как за чашкой чая</h1>
   <p class="lead">Меня зовут Лилия. Я из тех, кто всю жизнь учится новому, и ещё недавно думала, что нейросети — это не для меня. А теперь у меня есть свой помощник: помнит мои дела, считает деньги, подсказывает про здоровье. Раз я смогла — сможете и вы. Я рядом.</p>
   <a class="btn" href="https://t.me/lilekgiza?text=Здравствуйте%2C%20Лилия!%20Хочу%20узнать%20про%20ИИ-помощника" target="_blank" rel="noopener">Написать мне в Telegram</a>
-  <a class="btn-ghost" href="#services">Чем могу помочь →</a>
+  <div class="doors">
+    <a class="door" href="#for-me"><span>🙋‍♀️</span><b>Помощник для себя</b><small>деньги, здоровье, дела — ИИ, который помнит вас</small></a>
+    <a class="door" href="#for-business"><span>💼</span><b>Сайт или бот для вашего дела</b><small>мастерам и малому бизнесу — клиенты, заявки, витрина</small></a>
+  </div>
   <a class="cert" href="docs/sertifikat-labs6.pdf" target="_blank" rel="noopener"><span class="ic">🎓</span><div><b>Сертификат о подтверждении навыков ЛАБС</b><br><span>Интенсив по вайбкодингу и ИИ-агентам · проект защищён перед комиссией · посмотреть →</span></div></a>
 </header>
 
@@ -152,7 +161,7 @@
   <h2>Чем я могу помочь</h2>
   <p class="section-lead">Цены «от» — точную сумму скажу после разговора, когда пойму, что вам нужно.</p>
   <div class="grid grid-2">
-    <div class="card service">
+    <div class="card service" id="for-me">
       <h3>Свой ИИ-помощник в Telegram</h3>
       <p>Такой же, как у меня: живёт в привычном Telegram, знает вас и всегда под рукой.</p>
       <ul>
@@ -163,7 +172,7 @@
       </ul>
       <div class="price">от 5 000 ₽</div>
     </div>
-    <div class="card service">
+    <div class="card service" id="for-business">
       <h3>Бот для вашего дела</h3>
       <p>Если у вас своё маленькое дело — бот возьмёт на себя переписку с клиентами, пока вы занимаетесь любимым.</p>
       <ul>
